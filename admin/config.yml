@@ -8,7 +8,7 @@
 
 backend:
   name: github
-  repo: あなたのGitHubユーザー名/リポジトリ名  # ← ここを変更！例: takuma-ota/ota-hiroshima-sr
+  repo: ota2025lsp/ota-hiroshima-sr  # ← ここを変更！例: takuma-ota/ota-hiroshima-sr
   branch: main                                  # ← ブランチ名（通常は main）
   base_url: https://sveltia-cms-auth.pages.dev  # 無料の認証サービス（変更不要）
 
