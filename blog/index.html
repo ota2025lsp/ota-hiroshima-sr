@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ブログ｜太田社会保険労務士事務所【広島・障害年金】</title>
+<meta name="description" content="広島市中区の太田社会保険労務士事務所による、障害年金・社会保険・労務に関するブログ記事一覧です。">
+<link rel="canonical" href="https://ota-hiroshima-sr.com/blog/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:      #4a7c59;
+  --green-mid:  #6a9e77;
+  --green-pale: #eaf3ec;
+  --green-soft: #f3f8f4;
+  --sage:       #c8dcc9;
+  --text:       #333;
+  --text-mid:   #555;
+  --text-light: #888;
+  --white:      #fff;
+  --offwhite:   #fafaf8;
+  --border:     #ddeadf;
+  --radius:     14px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--white);line-height:1.9;font-weight:300}
+
+header{position:fixed;top:0;width:100%;z-index:100;background:rgba(255,255,255,0.97);border-bottom:1px solid var(--border);padding:0 5%;height:62px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 1px 12px rgba(74,124,89,0.08)}
+.logo{font-family:'Noto Serif JP',serif;color:var(--green);font-size:.95rem;letter-spacing:.04em;line-height:1.35;text-decoration:none}
+.logo span{font-size:.67rem;font-weight:300;color:var(--text-light);display:block;letter-spacing:.1em}
+nav{display:flex;gap:1.5rem;align-items:center}
+nav a{color:var(--text-mid);text-decoration:none;font-size:.8rem;letter-spacing:.06em;transition:color .2s}
+nav a:hover{color:var(--green)}
+nav a.active{color:var(--green);font-weight:500}
+.nav-cta{background:var(--green)!important;color:var(--white)!important;padding:8px 20px;border-radius:20px;font-weight:500!important}
+.nav-cta:hover{background:var(--green-mid)!important}
+
+.page-hero{padding:120px 5% 50px;background:linear-gradient(160deg,#f5faf6 0%,#ffffff 60%,#fdf8f3 100%);border-bottom:1px solid var(--border)}
+.page-hero-inner{max-width:900px;margin:0 auto;animation:fadeUp .7s ease both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.breadcrumb{font-size:.75rem;color:var(--text-light);margin-bottom:1.2rem}
+.breadcrumb a{color:var(--green);text-decoration:none}
+.breadcrumb span{margin:0 .5rem}
+.page-hero h1{font-family:'Noto Serif JP',serif;font-size:clamp(1.5rem,3.5vw,2.2rem);font-weight:400;color:#1e3528;letter-spacing:.04em;margin-bottom:.7rem}
+.page-hero p{font-size:.88rem;color:var(--text-mid);line-height:2}
+
+.blog-section{padding:60px 5% 100px;background:var(--offwhite)}
+.blog-inner{max-width:900px;margin:0 auto}
+
+/* カテゴリタグ */
+.category-nav{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.cat-btn{padding:6px 18px;border-radius:20px;font-size:.78rem;letter-spacing:.06em;cursor:pointer;border:1.5px solid var(--border);background:var(--white);color:var(--text-mid);font-family:'Noto Sans JP',sans-serif;transition:all .2s}
+.cat-btn:hover,.cat-btn.active{background:var(--green);color:var(--white);border-color:var(--green)}
+
+/* 記事カード */
+.post-list{display:grid;gap:1.4rem}
+.post-card{background:var(--white);border-radius:var(--radius);border:1px solid var(--border);padding:2rem 2.2rem;display:grid;grid-template-columns:1fr auto;gap:0 1.5rem;align-items:start;transition:all .3s;text-decoration:none;color:inherit;cursor:pointer}
+.post-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(74,124,89,.12);border-color:var(--sage)}
+.post-meta{display:flex;gap:.8rem;align-items:center;margin-bottom:.7rem;flex-wrap:wrap}
+.post-date{font-size:.75rem;color:var(--text-light);letter-spacing:.06em}
+.post-cat{background:var(--green-pale);color:var(--green);font-size:.7rem;padding:2px 10px;border-radius:10px;border:1px solid var(--sage)}
+.post-title{font-family:'Noto Serif JP',serif;font-size:1.05rem;color:#1e3528;font-weight:400;line-height:1.7;margin-bottom:.6rem}
+.post-excerpt{font-size:.82rem;color:var(--text-mid);line-height:1.95}
+.post-arrow{color:var(--green-mid);font-size:1.2rem;align-self:center;flex-shrink:0}
+
+/* ローディング・エラー */
+.loading{text-align:center;padding:4rem;color:var(--text-light);font-size:.88rem}
+.loading-spinner{display:inline-block;width:28px;height:28px;border:3px solid var(--border);border-top-color:var(--green);border-radius:50%;animation:spin .8s linear infinite;margin-bottom:1rem}
+@keyframes spin{to{transform:rotate(360deg)}}
+.error-msg{text-align:center;padding:3rem;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);color:var(--text-mid);font-size:.88rem}
+.error-msg strong{display:block;color:#c0392b;margin-bottom:.5rem}
+
+footer{background:#1e3528;color:rgba(255,255,255,.45);padding:2.5rem 5%;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem}
+.footer-logo{font-family:'Noto Serif JP',serif;color:rgba(255,255,255,.75);font-size:.9rem;line-height:1.6}
+.footer-info{font-size:.75rem;line-height:1.9}
+.footer-copy{font-size:.72rem;width:100%;text-align:center;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.1);margin-top:.5rem}
+
+@media(max-width:768px){
+  nav a:not(.nav-cta){display:none}
+  .post-card{grid-template-columns:1fr}
+  .post-arrow{display:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="../index.html" class="logo">広島　太田社会保険労務士事務所<span>広島市中区 ／ 障害年金・社会保険労務</span></a>
+  <nav>
+    <a href="../index.html#services">業務内容</a>
+    <a href="../index.html#faq">よくある質問</a>
+    <a href="../index.html#profile">代表者紹介</a>
+    <a href="index.html" class="active">ブログ</a>
+    <a href="../index.html#contact" class="nav-cta">無料相談</a>
+  </nav>
+</header>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb">
+      <a href="../index.html">ホーム</a><span>›</span>ブログ
+    </div>
+    <h1>ブログ</h1>
+    <p>障害年金・社会保険・労務に関する情報をお届けします。</p>
+  </div>
+</div>
+
+<section class="blog-section">
+  <div class="blog-inner">
+    <div class="category-nav" id="cat-nav">
+      <button class="cat-btn active" data-cat="">すべて</button>
+      <!-- カテゴリは記事読み込み後に自動追加されます -->
+    </div>
+    <div class="post-list" id="post-list">
+      <div class="loading">
+        <div class="loading-spinner"></div><br>記事を読み込み中...
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">太田社会保険労務士事務所<br><span style="font-size:.75rem;font-family:'Noto Sans JP',sans-serif;font-weight:300">広島市中区 ／ 障害年金専門</span></div>
+  <div class="footer-info">広島市中区・吉島バス通りよりすぐ<br>お問い合わせはフォームよりお願いします</div>
+  <div class="footer-copy">© 2026 太田社会保険労務士事務所　All Rights Reserved.</div>
+</footer>
+
+<script>
+// ============================================================
+// ★ ここを自分の情報に書き換えてください ★
+// ============================================================
+const MICROCMS_SERVICE_ID = 'ota-sr-blog';  // 例: ota-sr-blog
+const MICROCMS_API_KEY    = 'IRWZzuuADcmByOu7qSkOV8DNcNQ6FGILzRPD';      // microCMSの管理画面でコピー
+// ============================================================
+
+let allPosts = [];
+
+async function loadPosts() {
+  const listEl = document.getElementById('post-list');
+
+  try {
+    const res = await fetch(
+      `https://${MICROCMS_SERVICE_ID}.microcms.io/api/v1/blog?limit=100&orders=-publishedAt`,
+      { headers: { 'X-MICROCMS-API-KEY': MICROCMS_API_KEY } }
+    );
+
+    if (!res.ok) throw new Error(`API Error: ${res.status}`);
+    const data = await res.json();
+    allPosts = data.contents;
+
+    // カテゴリを収集してボタンを追加
+    buildCategoryNav(allPosts);
+
+    // 記事一覧を表示
+    renderPosts(allPosts);
+
+  } catch (err) {
+    listEl.innerHTML = `
+      <div class="error-msg">
+        <strong>⚠️ 記事の読み込みに失敗しました</strong>
+        MICROCMS_SERVICE_ID と MICROCMS_API_KEY が正しく設定されているか確認してください。<br>
+        <small style="color:#aaa;margin-top:.5rem;display:block">${err.message}</small>
+      </div>`;
+  }
+}
+
+function buildCategoryNav(posts) {
+  const cats = [...new Set(posts.flatMap(p => (p.category || []).map(c => c.name || c)))].filter(Boolean);
+  const nav = document.getElementById('cat-nav');
+  cats.forEach(cat => {
+    const btn = document.createElement('button');
+    btn.className = 'cat-btn';
+    btn.dataset.cat = cat;
+    btn.textContent = cat;
+    btn.onclick = () => filterByCat(cat, btn);
+    nav.appendChild(btn);
+  });
+}
+
+function filterByCat(cat, btn) {
+  document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  if (cat === '') {
+    renderPosts(allPosts);
+  } else {
+    const filtered = allPosts.filter(p =>
+      (p.category || []).some(c => (c.name || c) === cat)
+    );
+    renderPosts(filtered);
+  }
+}
+
+// すべてボタン
+document.querySelector('[data-cat=""]').onclick = function() {
+  filterByCat('', this);
+};
+
+function formatDate(iso) {
+  const d = new Date(iso);
+  return `${d.getFullYear()}年${d.getMonth()+1}月${d.getDate()}日`;
+}
+
+function stripHtml(html) {
+  const tmp = document.createElement('div');
+  tmp.innerHTML = html || '';
+  const text = tmp.textContent || '';
+  return text.length > 100 ? text.slice(0, 100) + '…' : text;
+}
+
+function renderPosts(posts) {
+  const listEl = document.getElementById('post-list');
+  if (posts.length === 0) {
+    listEl.innerHTML = '<div class="loading">記事がまだありません。</div>';
+    return;
+  }
+  listEl.innerHTML = posts.map(post => {
+    const cats = (post.category || []).map(c => c.name || c);
+    const catTag = cats.length ? `<span class="post-cat">${cats[0]}</span>` : '';
+    const excerpt = post.excerpt || stripHtml(post.body || post.content || '');
+    return `
+      <a class="post-card" href="post.html?id=${post.id}">
+        <div>
+          <div class="post-meta">
+            <span class="post-date">${formatDate(post.publishedAt)}</span>
+            ${catTag}
+          </div>
+          <div class="post-title">${post.title}</div>
+          <div class="post-excerpt">${excerpt}</div>
+        </div>
+        <div class="post-arrow">›</div>
+      </a>`;
+  }).join('');
+}
+
+loadPosts();
+</script>
+</body>
+</html>
