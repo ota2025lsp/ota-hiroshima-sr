@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>障害年金 年齢・年号早見表｜太田社会保険労務士事務所【広島】</title>
+<meta name="description" content="生年を入力するだけで年齢・西暦・和暦・年金の節目が一覧表示。障害年金の初診日確認や年金手続きにお役立てください。広島市の太田社会保険労務士事務所が提供する無料ツールです。">
+<meta name="keywords" content="年齢早見表,年号早見表,西暦和暦,障害年金,広島,社会保険労務士">
+<link rel="canonical" href="https://ota-hiroshima-sr.com/nenrei.html">
+<meta property="og:title" content="障害年金 年齢・年号早見表｜太田社会保険労務士事務所">
+<meta property="og:description" content="生年を入力するだけで年齢・西暦・和暦・年金の節目が一覧表示。障害年金の手続きにお役立てください。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ota-hiroshima-sr.com/nenrei.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ===== サイト共通変数 ===== */
+:root{
+  --green:      #4a7c59;
+  --green-mid:  #6a9e77;
+  --green-pale: #eaf3ec;
+  --green-soft: #f3f8f4;
+  --sage:       #c8dcc9;
+  --accent:     #e07b4a;
+  --text:       #333;
+  --text-mid:   #555;
+  --text-light: #888;
+  --white:      #fff;
+  --offwhite:   #fafaf8;
+  --border:     #ddeadf;
+  --radius:     14px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--white);line-height:1.9;font-weight:300}
+input,select,button{font-family:inherit;font-size:16px}
+button{cursor:pointer}
+
+/* ===== サイトヘッダー ===== */
+header{position:fixed;top:0;width:100%;z-index:100;background:rgba(255,255,255,0.97);border-bottom:1px solid var(--border);padding:0 5%;height:62px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 1px 12px rgba(74,124,89,0.08)}
+.logo{font-family:'Noto Serif JP',serif;color:var(--green);font-size:.95rem;letter-spacing:.04em;line-height:1.35;text-decoration:none}
+.logo span{font-size:.67rem;font-weight:300;color:var(--text-light);display:block;letter-spacing:.1em}
+nav{display:flex;gap:1.5rem;align-items:center}
+nav a{color:var(--text-mid);text-decoration:none;font-size:.8rem;letter-spacing:.06em;transition:color .2s}
+nav a:hover{color:var(--green)}
+.nav-cta{background:var(--green)!important;color:var(--white)!important;padding:8px 20px;border-radius:20px;font-weight:500!important}
+.nav-cta:hover{background:var(--green-mid)!important}
+
+/* ===== ページヒーロー ===== */
+.page-hero{padding:90px 5% 40px;background:linear-gradient(160deg,#f5faf6 0%,#ffffff 60%,#fdf8f3 100%);border-bottom:1px solid var(--border)}
+.page-hero-inner{max-width:800px;margin:0 auto}
+.breadcrumb{font-size:.75rem;color:var(--text-light);margin-bottom:1rem}
+.breadcrumb a{color:var(--green);text-decoration:none}
+.breadcrumb a:hover{text-decoration:underline}
+.breadcrumb span{margin:0 .4rem}
+.page-hero h1{font-family:'Noto Serif JP',serif;font-size:clamp(1.3rem,3vw,1.9rem);font-weight:400;color:#1e3528;margin-bottom:.5rem}
+.page-hero p{font-size:.85rem;color:var(--text-mid);line-height:2}
+
+/* ===== ツール本体ラッパー ===== */
+.tool-wrap{padding:30px 5% 80px;background:var(--offwhite)}
+.tool-inner{max-width:660px;margin:0 auto}
+
+/* ===== ツール UI（元のスタイルをグリーン系に調整） ===== */
+#app{background:var(--white);border-radius:var(--radius);border:1px solid var(--border);overflow:hidden;box-shadow:0 2px 20px rgba(74,124,89,.07)}
+
+#header-tool{
+  background:linear-gradient(135deg,#1e3528,var(--green));
+  color:white;padding:16px 18px 14px;
+}
+#header-tool h2{font-family:'Noto Serif JP',serif;font-size:1.1rem;font-weight:400;letter-spacing:.04em}
+#header-tool p{font-size:.75rem;opacity:.75;margin-top:3px}
+#header-row{display:flex;justify-content:space-between;align-items:center}
+#menu-toggle{background:rgba(255,255,255,.2);border:none;color:white;border-radius:10px;padding:8px 14px;font-size:.8rem;transition:background .2s}
+#menu-toggle:hover{background:rgba(255,255,255,.3)}
+#menu-panel{margin-top:10px;padding:10px 12px;background:rgba(255,255,255,.12);border-radius:10px;display:none;gap:20px;flex-wrap:wrap}
+#menu-panel.open{display:flex}
+#menu-panel label{display:flex;align-items:center;gap:8px;font-size:.85rem;cursor:pointer}
+#menu-panel input[type=checkbox]{width:18px;height:18px;accent-color:#c8dcc9}
+
+#input-panel{background:white;padding:18px}
+#mode-toggle{display:flex;gap:8px;margin-bottom:14px}
+.mode-btn{flex:1;padding:11px;border-radius:10px;border:1.5px solid var(--border);background:white;color:var(--text-mid);font-size:.9rem;font-weight:300;transition:all .2s}
+.mode-btn.active{background:var(--green);color:white;border-color:var(--green);font-weight:500}
+.input-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:10px}
+.input-row input,.input-row select{padding:10px 12px;border:1.5px solid var(--border);border-radius:10px;outline:none;background:white;-webkit-appearance:none;appearance:none;color:var(--text)}
+.input-row input:focus,.input-row select:focus{border-color:var(--green)}
+.input-row input[type=number]{-moz-appearance:textfield}
+.input-row input::-webkit-inner-spin-button,.input-row input::-webkit-outer-spin-button{-webkit-appearance:none}
+#seireki-input{flex:1;min-width:130px}
+#wareki-nen{width:72px}
+#wareki-group{display:none;gap:8px;align-items:center;flex-wrap:wrap;flex:1}
+#wareki-group.visible{display:flex}
+#seireki-group{display:flex;gap:8px;align-items:center;flex:1}
+#seireki-group.hidden{display:none}
+.unit-label{font-size:.88rem;color:var(--text-mid);white-space:nowrap}
+#converted-label{display:none;font-size:.82rem;color:var(--green);background:var(--green-pale);padding:4px 14px;border-radius:8px;margin-bottom:10px;width:fit-content;border:1px solid var(--sage)}
+#converted-label.visible{display:block}
+#refdate-row{display:flex;gap:8px;align-items:flex-end;margin-top:6px}
+#refdate-wrap{flex:1}
+#refdate-wrap label{font-size:.75rem;color:var(--text-light);display:block;margin-bottom:4px}
+#refdate-input{width:100%;padding:10px 12px;border:1.5px solid var(--border);border-radius:10px;outline:none;background:white}
+#refdate-input:focus{border-color:var(--green)}
+#today-btn{padding:10px 16px;background:var(--green-soft);border:1.5px solid var(--border);border-radius:10px;font-size:.8rem;color:var(--green);white-space:nowrap;transition:background .2s}
+#today-btn:hover{background:var(--green-pale)}
+
+#summary{display:none;margin-top:12px;padding:14px 16px;background:var(--green-soft);border:1.5px solid var(--sage);border-radius:12px}
+#summary.visible{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;align-items:center}
+#summary-birth{font-size:.95rem;font-weight:500;color:#1e3528;font-family:'Noto Serif JP',serif}
+#summary-birth-label,#summary-age-label{font-size:.72rem;color:var(--text-light);margin-bottom:2px}
+#summary-age-label{text-align:right}
+#summary-age{font-size:2rem;font-weight:400;color:var(--green);line-height:1;font-family:'Noto Serif JP',serif}
+#summary-age-unit{font-size:1rem}
+
+#legend{display:none;background:white;padding:8px 16px;gap:6px;flex-wrap:wrap;align-items:center;border-top:1px solid var(--border)}
+#legend.visible{display:flex}
+.legend-item{font-size:.72rem;padding:3px 10px;border-radius:10px;font-weight:500}
+
+#table-wrap{background:white;overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:.88rem}
+thead th{position:sticky;top:0;z-index:10;background:var(--green);color:white;padding:10px 8px;white-space:nowrap;font-size:.82rem;font-weight:500;letter-spacing:.04em}
+tbody tr{border-bottom:1px solid #e8f0ea;border-left:4px solid transparent}
+tbody td{padding:9px 8px}
+.td-age{text-align:center;min-width:58px}
+.td-year{text-align:center;font-family:monospace;font-size:1rem;font-weight:600;min-width:76px;color:#1e3528}
+.td-wareki{text-align:center;min-width:118px;font-size:.82rem}
+.td-school{text-align:center;min-width:90px}
+.td-note{text-align:left;min-width:120px}
+.age-num{font-size:1.05rem;font-weight:500;color:#1e3528}
+.age-unit{font-size:.7rem;color:var(--text-light)}
+.current-badge{display:inline-block;font-size:.65rem;background:var(--accent);color:white;padding:1px 6px;border-radius:8px;margin-left:4px;vertical-align:middle}
+.school-badge,.note-badge{display:inline-block;font-size:.75rem;padding:3px 9px;border-radius:10px;font-weight:500;white-space:nowrap}
+@keyframes pulse-bg{0%{background-color:#fde047}100%{background-color:#fef9c3}}
+.current-row{animation:pulse-bg 1.5s ease-out forwards}
+
+#empty{background:white;padding:50px 24px;text-align:center}
+#empty .emoji{font-size:3rem;margin-bottom:1rem}
+#empty p{font-size:.9rem;color:var(--text-light);line-height:1.9}
+#empty .hint{font-size:.75rem;color:#bbb;margin-top:1.2rem;line-height:1.9}
+
+/* ===== 下部CTA ===== */
+.tool-cta{margin-top:2rem;background:linear-gradient(135deg,var(--green-pale),var(--green-soft));border-radius:var(--radius);border:1.5px solid var(--sage);padding:2rem;text-align:center}
+.tool-cta p{font-size:.88rem;color:var(--text-mid);line-height:2;margin-bottom:1.2rem}
+.tool-cta a{display:inline-block;background:var(--green);color:white;padding:12px 32px;border-radius:28px;text-decoration:none;font-size:.88rem;font-weight:500;letter-spacing:.06em;transition:background .2s}
+.tool-cta a:hover{background:var(--green-mid)}
+
+/* ===== フッター ===== */
+footer{background:#1e3528;color:rgba(255,255,255,.45);padding:2.5rem 5%;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem}
+.footer-logo{font-family:'Noto Serif JP',serif;color:rgba(255,255,255,.75);font-size:.9rem;line-height:1.6}
+.footer-info{font-size:.75rem;line-height:1.9}
+.footer-copy{font-size:.72rem;width:100%;text-align:center;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.1);margin-top:.5rem}
+
+@media(max-width:768px){
+  nav a:not(.nav-cta){display:none}
+  .page-hero{padding:80px 5% 30px}
+}
+</style>
+</head>
+<body>
+
+<!-- サイトヘッダー -->
+<header>
+  <a href="index.html" class="logo">広島　太田社会保険労務士事務所<span>広島市中区 ／ 障害年金・社会保険労務</span></a>
+  <nav>
+    <a href="index.html#services">業務内容</a>
+    <a href="index.html#faq">よくある質問</a>
+    <a href="index.html#profile">代表者紹介</a>
+    <a href="blog/index.html">ブログ</a>
+    <a href="index.html#contact" class="nav-cta">無料相談</a>
+  </nav>
+</header>
+
+<!-- ページヒーロー -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb">
+      <a href="index.html">ホーム</a><span>›</span>年齢・年号早見表
+    </div>
+    <h1>📅 障害年金のための 年齢・年号早見表</h1>
+    <p>生年を入力するだけで、西暦・和暦・年金の節目が一覧表示されます。<br>初診日の確認や年金手続きにご活用ください。完全無料・外部送信なし。</p>
+  </div>
+</div>
+
+<!-- ツール本体 -->
+<div class="tool-wrap">
+  <div class="tool-inner">
+    <div id="app">
+
+      <!-- ツールヘッダー -->
+      <div id="header-tool">
+        <div id="header-row">
+          <div>
+            <h2>📅 年齢・年号早見表</h2>
+            <p>年金・社会保険手続きサポート</p>
+          </div>
+          <button id="menu-toggle">⚙ 表示</button>
+        </div>
+        <div id="menu-panel">
+          <label><input type="checkbox" id="chk-school" checked> 学校区分</label>
+          <label><input type="checkbox" id="chk-notes"  checked> 年金・保険</label>
+        </div>
+      </div>
+
+      <!-- 入力パネル -->
+      <div id="input-panel">
+        <div id="mode-toggle">
+          <button class="mode-btn active" id="btn-seireki">西暦入力</button>
+          <button class="mode-btn"        id="btn-wareki">和暦入力</button>
+        </div>
+        <div class="input-row">
+          <div id="seireki-group">
+            <input type="number" id="seireki-input" inputmode="numeric" placeholder="生年（例: 1960）" min="1868" max="2026"/>
+            <span class="unit-label">年</span>
+          </div>
+          <div id="wareki-group">
+            <select id="era-select">
+              <option value="令和">令和</option>
+              <option value="平成">平成</option>
+              <option value="昭和" selected>昭和</option>
+              <option value="大正">大正</option>
+              <option value="明治">明治</option>
+            </select>
+            <input type="number" id="wareki-nen" inputmode="numeric" placeholder="年" min="1"/>
+            <span class="unit-label">年</span>
+          </div>
+          <select id="birth-month"></select>
+        </div>
+        <div id="converted-label"></div>
+        <div id="refdate-row">
+          <div id="refdate-wrap">
+            <label for="refdate-input">基準日</label>
+            <input type="date" id="refdate-input"/>
+          </div>
+          <button id="today-btn">今日</button>
+        </div>
+        <div id="summary">
+          <div>
+            <div id="summary-birth-label">生年</div>
+            <div id="summary-birth"></div>
+          </div>
+          <div style="text-align:right">
+            <div id="summary-age-label">基準日の年齢</div>
+            <div><span id="summary-age"></span><span id="summary-age-unit" class="age-unit">歳</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="legend">
+        <span class="legend-item" style="background:#f0fdf4;color:#15803d;border:1px solid #15803d40">小学校 6-11歳</span>
+        <span class="legend-item" style="background:#eff6ff;color:#1d4ed8;border:1px solid #1d4ed840">中学校 12-14歳</span>
+        <span class="legend-item" style="background:#faf5ff;color:#7c3aed;border:1px solid #7c3aed40">高校 15-17歳</span>
+        <span class="legend-item" style="background:#fff7ed;color:#b45309;border:1px solid #b4530940">大学 18-21歳</span>
+        <span style="font-size:.72rem;color:#9ca3af">※4/2以降生まれは±1年</span>
+      </div>
+
+      <div id="table-wrap" style="display:none">
+        <table>
+          <thead><tr id="thead-row"></tr></thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+
+      <div id="empty">
+        <div class="emoji">📋</div>
+        <p>生年を入力すると<br>年齢早見表が表示されます</p>
+        <p class="hint">障害年金の初診日確認・年金手続きにご活用ください</p>
+      </div>
+
+    </div><!-- /#app -->
+
+    <!-- 相談CTA -->
+    <div class="tool-cta">
+      <p>「自分は障害年金を受け取れるの？」<br>初診日の確認から申請サポートまで、まずはお気軽にご相談ください。<br>広島市近隣の方は初回相談無料です。</p>
+      <a href="index.html#contact">無料相談を申し込む</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- フッター -->
+<footer>
+  <div class="footer-logo">太田社会保険労務士事務所<br><span style="font-size:.75rem;font-family:'Noto Sans JP',sans-serif;font-weight:300">広島市中区 ／ 障害年金専門</span></div>
+  <div class="footer-info">広島市中区・吉島バス通りよりすぐ<br>お問い合わせはフォームよりお願いします</div>
+  <div class="footer-copy">© 2026 太田社会保険労務士事務所　All Rights Reserved.</div>
+</footer>
+
+<script>
+const ERAS=[{name:"令和",s:2019},{name:"平成",s:1989},{name:"昭和",s:1926},{name:"大正",s:1912},{name:"明治",s:1868}];
+const TRANSITION={2019:"平成31/令和元",1989:"昭和64/平成元",1926:"大正15/昭和元",1912:"明治45/大正元"};
+function toWareki(y){if(TRANSITION[y])return TRANSITION[y]+"年";for(const e of ERAS){if(y>=e.s){const n=y-e.s+1;return e.name+(n===1?"元":n)+"年"}}return y+"年"}
+function fromWareki(eraName,yStr){const e=ERAS.find(x=>x.name===eraName);if(!e)return null;const n=yStr==="元"?1:parseInt(yStr);if(isNaN(n)||n<1)return null;return e.s+n-1}
+const PENSION={0:{label:"生年",color:"#4a7c59"},20:{label:"国民年金加入",color:"#0369a1"},40:{label:"介護保険第2号",color:"#0369a1"},60:{label:"年金繰上受給可",color:"#b45309"},65:{label:"老齢基礎・厚生年金",color:"#15803d"},66:{label:"繰下げ受給開始可",color:"#15803d"},70:{label:"厚年資格喪失",color:"#15803d"},75:{label:"繰下げ上限（最大）",color:"#dc2626"}};
+const SCHOOL={6:{label:"小1入学",level:"elem",color:"#15803d",bg:"#f0fdf4"},7:{label:"小学2年",level:"elem",color:"#15803d",bg:"#f0fdf4"},8:{label:"小学3年",level:"elem",color:"#15803d",bg:"#f0fdf4"},9:{label:"小学4年",level:"elem",color:"#15803d",bg:"#f0fdf4"},10:{label:"小学5年",level:"elem",color:"#15803d",bg:"#f0fdf4"},11:{label:"小学6年",level:"elem",color:"#15803d",bg:"#f0fdf4"},12:{label:"中1入学",level:"middle",color:"#1d4ed8",bg:"#eff6ff"},13:{label:"中学2年",level:"middle",color:"#1d4ed8",bg:"#eff6ff"},14:{label:"中学3年",level:"middle",color:"#1d4ed8",bg:"#eff6ff"},15:{label:"高1入学",level:"high",color:"#7c3aed",bg:"#faf5ff"},16:{label:"高校2年",level:"high",color:"#7c3aed",bg:"#faf5ff"},17:{label:"高校3年",level:"high",color:"#7c3aed",bg:"#faf5ff"},18:{label:"大学1年",level:"univ",color:"#b45309",bg:"#fff7ed"},19:{label:"大学2年",level:"univ",color:"#b45309",bg:"#fff7ed"},20:{label:"大学3年",level:"univ",color:"#b45309",bg:"#fff7ed"},21:{label:"大学4年",level:"univ",color:"#b45309",bg:"#fff7ed"}};
+const $=id=>document.getElementById(id);
+const today=new Date();
+const pad2=n=>String(n).padStart(2,"0");
+const todayStr=`${today.getFullYear()}-${pad2(today.getMonth()+1)}-${pad2(today.getDate())}`;
+const monthSel=$("birth-month");
+for(let m=1;m<=12;m++){const opt=document.createElement("option");opt.value=m;opt.textContent=m+"月生";monthSel.appendChild(opt)}
+$("refdate-input").value=todayStr;
+let inputMode="seireki",showSchool=true,showNotes=true;
+function getBirthYear(){if(inputMode==="seireki"){const y=parseInt($("seireki-input").value);return isNaN(y)||y<1868||y>today.getFullYear()?null:y}return fromWareki($("era-select").value,$("wareki-nen").value)}
+function getRefDate(){const d=new Date($("refdate-input").value);return isNaN(d.getTime())?today:d}
+function calcAge(birthYear,birthMonth,refDate){let age=refDate.getFullYear()-birthYear;if(refDate.getMonth()+1<birthMonth)age--;return Math.max(0,Math.min(age,120))}
+function render(){
+  const birthYear=getBirthYear(),birthMonth=parseInt(monthSel.value),refDate=getRefDate();
+  if(birthYear!==null){const age=calcAge(birthYear,birthMonth,refDate);$("summary-birth").textContent=birthYear+"年（"+toWareki(birthYear)+"）";$("summary-age").textContent=age;$("summary").classList.add("visible");if(showSchool)$("legend").classList.add("visible");else $("legend").classList.remove("visible")}else{$("summary").classList.remove("visible");$("legend").classList.remove("visible")}
+  if(inputMode==="seireki"){const y=parseInt($("seireki-input").value);if(!isNaN(y)&&y>=1868){$("converted-label").textContent="→ "+toWareki(y);$("converted-label").classList.add("visible")}else $("converted-label").classList.remove("visible")}else{const y=fromWareki($("era-select").value,$("wareki-nen").value);if(y){$("converted-label").textContent="→ 西暦 "+y+" 年";$("converted-label").classList.add("visible")}else $("converted-label").classList.remove("visible")}
+  if(birthYear===null){$("table-wrap").style.display="none";$("empty").style.display="block";return}
+  $("table-wrap").style.display="block";$("empty").style.display="none";
+  const currentAge=calcAge(birthYear,birthMonth,refDate);
+  const thead=$("thead-row");thead.innerHTML="";
+  const ths=["年齢","西暦","和暦"];if(showSchool)ths.push("学校");if(showNotes)ths.push("年金・保険");
+  ths.forEach(txt=>{const th=document.createElement("th");th.textContent=txt;thead.appendChild(th)});
+  const tbody=$("tbody");tbody.innerHTML="";let currentRow=null;
+  for(let age=0;age<=75;age++){
+    const year=birthYear+age,school=SCHOOL[age]||null,pension=PENSION[age]||null,isCurrent=age===currentAge,is5x=age>0&&age%5===0;
+    const tr=document.createElement("tr");
+    let bg=age%2===0?"#f8faf8":"white",borderColor="transparent";
+    if(is5x)bg="#f0f7f2";
+    if(pension&&showNotes){bg="#f0fdf4";borderColor=pension.color}
+    if(school&&showSchool){bg=school.bg;borderColor=school.color}
+    if(isCurrent){tr.classList.add("current-row");borderColor="#e07b4a"}else tr.style.backgroundColor=bg;
+    tr.style.borderLeftColor=borderColor;
+    const tdAge=document.createElement("td");tdAge.className="td-age";tdAge.innerHTML=`<span class="age-num">${age}</span><span class="age-unit">歳</span>`+(isCurrent?`<span class="current-badge">現在</span>`:"");tr.appendChild(tdAge);
+    const tdYear=document.createElement("td");tdYear.className="td-year";tdYear.textContent=year;tr.appendChild(tdYear);
+    const tdWareki=document.createElement("td");tdWareki.className="td-wareki";tdWareki.textContent=toWareki(year);tr.appendChild(tdWareki);
+    if(showSchool){const tdSch=document.createElement("td");tdSch.className="td-school";if(school){const span=document.createElement("span");span.className="school-badge";span.style.cssText=`background:${school.color}1a;color:${school.color};border:1px solid ${school.color}50`;span.textContent=school.label;tdSch.appendChild(span)}tr.appendChild(tdSch)}
+    if(showNotes){const tdPen=document.createElement("td");tdPen.className="td-note";if(pension){const span=document.createElement("span");span.className="note-badge";span.style.cssText=`background:${pension.color}1a;color:${pension.color}`;span.textContent=pension.label;tdPen.appendChild(span)}tr.appendChild(tdPen)}
+    tbody.appendChild(tr);if(isCurrent)currentRow=tr;
+  }
+  if(currentRow)setTimeout(()=>currentRow.scrollIntoView({behavior:"smooth",block:"center"}),150);
+}
+$("btn-seireki").addEventListener("click",()=>{inputMode="seireki";$("btn-seireki").classList.add("active");$("btn-wareki").classList.remove("active");$("seireki-group").classList.remove("hidden");$("wareki-group").classList.remove("visible");render()});
+$("btn-wareki").addEventListener("click",()=>{inputMode="wareki";$("btn-wareki").classList.add("active");$("btn-seireki").classList.remove("active");$("seireki-group").classList.add("hidden");$("wareki-group").classList.add("visible");render()});
+["seireki-input","era-select","wareki-nen","birth-month","refdate-input"].forEach(id=>$(id).addEventListener("input",render));
+["seireki-input","era-select","wareki-nen","birth-month","refdate-input"].forEach(id=>$(id).addEventListener("change",render));
+$("today-btn").addEventListener("click",()=>{$("refdate-input").value=todayStr;render()});
+$("menu-toggle").addEventListener("click",()=>{$("menu-panel").classList.toggle("open")});
+$("chk-school").addEventListener("change",e=>{showSchool=e.target.checked;render()});
+$("chk-notes").addEventListener("change",e=>{showNotes=e.target.checked;render()});
+render();
+</script>
+</body>
+</html>
