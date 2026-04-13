@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ブログ｜太田社会保険労務士事務所【広島・障害年金】</title>
-<meta name="description" content="広島市中区の太田社会保険労務士事務所による、障害年金・社会保険・労務に関するブログ記事一覧です。">
+<title>AIは使わないブログ｜太田社会保険労務士事務所【広島・障害年金】</title>
+<meta name="description" content="広島市中区の太田社会保険労務士事務所による、気ままなブログ記事一覧です。">
 <link rel="canonical" href="https://ota-hiroshima-sr.com/blog/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -125,6 +125,7 @@ footer{background:#1e3528;color:rgba(255,255,255,.45);padding:2.5rem 5%;display:
 <footer>
   <div class="footer-logo">太田社会保険労務士事務所<br><span style="font-size:.75rem;font-family:'Noto Sans JP',sans-serif;font-weight:300">広島市中区 ／ 障害年金専門</span></div>
   <div class="footer-info">広島市中区・吉島バス通りよりすぐ<br>お問い合わせはフォームよりお願いします</div>
+  <div class="footer-links" style="font-size:.72rem;width:100%;text-align:center;margin-bottom:.3rem"><a href="../privacy.html" style="color:rgba(255,255,255,.5);text-decoration:none;margin:0 .8rem">個人情報保護方針</a></div>
   <div class="footer-copy">© 2026 太田社会保険労務士事務所　All Rights Reserved.</div>
 </footer>
 
@@ -141,11 +142,16 @@ let allPosts = [];
 async function loadPosts() {
   const listEl = document.getElementById('post-list');
 
+  // 10秒でタイムアウト
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 10000);
+
   try {
     const res = await fetch(
       `https://${MICROCMS_SERVICE_ID}.microcms.io/api/v1/blog?limit=100&orders=-publishedAt`,
-      { headers: { 'X-MICROCMS-API-KEY': MICROCMS_API_KEY } }
+      { headers: { 'X-MICROCMS-API-KEY': MICROCMS_API_KEY }, signal: controller.signal }
     );
+    clearTimeout(timer);
 
     if (!res.ok) throw new Error(`API Error: ${res.status}`);
     const data = await res.json();
@@ -158,11 +164,15 @@ async function loadPosts() {
     renderPosts(allPosts);
 
   } catch (err) {
+    clearTimeout(timer);
+    const isTimeout = err.name === 'AbortError';
     listEl.innerHTML = `
       <div class="error-msg">
-        <strong>⚠️ 記事の読み込みに失敗しました</strong>
-        MICROCMS_SERVICE_ID と MICROCMS_API_KEY が正しく設定されているか確認してください。<br>
-        <small style="color:#aaa;margin-top:.5rem;display:block">${err.message}</small>
+        <strong>${isTimeout ? '⏱️ 読み込みがタイムアウトしました' : '⚠️ 記事の読み込みに失敗しました'}</strong>
+        ${isTimeout
+          ? '通信に時間がかかっています。しばらくしてからページを再読み込みしてください。'
+          : 'しばらくしてから再度お試しください。'}
+        <br><a href="../index.html#contact" style="display:inline-block;margin-top:1rem;color:var(--green)">お問い合わせはこちら</a>
       </div>`;
   }
 }
