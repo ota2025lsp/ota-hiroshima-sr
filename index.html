@@ -16,6 +16,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://ota-hiroshima-sr.com/ogp.png">
 <link rel="canonical" href="https://ota-hiroshima-sr.com/">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="shortcut icon" href="favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
@@ -46,9 +49,9 @@ html{scroll-behavior:smooth}
 body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--white);line-height:1.9;font-weight:300}
 
 /* HEADER */
-header{position:fixed;top:0;width:100%;z-index:100;background:rgba(255,255,255,0.97);border-bottom:1px solid var(--border);padding:0 5%;height:62px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 1px 12px rgba(74,124,89,0.08)}
-.logo{font-family:'Noto Serif JP',serif;color:var(--green);font-size:1.15rem;letter-spacing:.04em;line-height:1.35;font-weight:600}
-.logo span{font-size:.7rem;font-weight:300;color:var(--text-light);display:block;letter-spacing:.1em}
+header{position:fixed;top:0;width:100%;z-index:100;background:rgba(255,255,255,0.97);border-bottom:1px solid var(--border);padding:0 max(5%,calc((100% - 1400px)/2));height:72px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 1px 12px rgba(74,124,89,0.08)}
+.logo{font-family:'Noto Serif JP',serif;color:var(--green);font-size:1.45rem;letter-spacing:.04em;line-height:1.3;font-weight:700;text-decoration:none;cursor:pointer}
+.logo span{font-size:.78rem;font-weight:300;color:var(--text-light);display:block;letter-spacing:.12em;margin-top:2px}
 nav{display:flex;gap:1.5rem;align-items:center}
 nav a{color:var(--text-mid);text-decoration:none;font-size:.88rem;letter-spacing:.06em;transition:color .2s}
 nav a:hover{color:var(--green)}
@@ -121,30 +124,31 @@ nav a:hover{color:var(--green)}
 .btn-outline{border:1.5px solid var(--green);color:var(--green);padding:13px 28px;border-radius:28px;text-decoration:none;font-size:.96rem;letter-spacing:.06em;transition:all .25s}
 .btn-outline:hover{background:var(--green-pale)}
 .hero-stat{margin-top:3rem;display:flex;gap:2.5rem;flex-wrap:wrap;padding-top:2rem;border-top:1px solid var(--border)}
-.stat-num{font-family:'Noto Serif JP',serif;font-size:2rem;color:var(--green);font-weight:400;line-height:1}
-.stat-num span{font-size:.9rem}
-.stat-label{font-size:.7rem;color:var(--text-light);margin-top:5px;letter-spacing:.1em}
+.stat-num{font-family:'Noto Serif JP',serif;font-size:2.4rem;color:var(--green);font-weight:400;line-height:1}
+.stat-num span{font-size:1.05rem}
+.stat-label{font-size:.9rem;color:var(--text-light);margin-top:6px;letter-spacing:.08em}
 
 /* SECTIONS */
-section{padding:80px 5%}
-.sec-en{font-size:.67rem;letter-spacing:.22em;color:var(--green-mid);text-transform:uppercase;display:block;margin-bottom:.5rem}
-.sec-title{font-family:'Noto Serif JP',serif;font-size:clamp(1.3rem,2.5vw,1.7rem);font-weight:400;letter-spacing:.04em;color:#1e3528}
+/* WQHDなど超ワイド画面で左寄りにならないよう、max 1400px でコンテンツを中央寄せ */
+section{padding:80px max(5%,calc((100% - 1400px)/2))}
+.sec-en{font-size:.72rem;letter-spacing:.22em;color:var(--green-mid);text-transform:uppercase;display:block;margin-bottom:.6rem}
+.sec-title{font-family:'Noto Serif JP',serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:400;letter-spacing:.04em;color:#1e3528}
 .divider{width:32px;height:2px;background:linear-gradient(to right,var(--green),var(--sage));border-radius:2px;margin:1rem 0 2.5rem}
 
 /* INTRO */
 .intro{background:var(--offwhite)}
 .intro-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:960px;margin:0 auto}
-.intro-text p{font-size:1rem;color:var(--text-mid);line-height:2.2;margin-bottom:1rem}
+.intro-text p{font-size:1.06rem;color:var(--text-mid);line-height:2.2;margin-bottom:1rem}
 .intro-card{background:var(--white);border-radius:var(--radius);padding:2rem 2.2rem;border:1px solid var(--border);box-shadow:0 2px 20px rgba(74,124,89,.07)}
 .intro-card h3{font-family:'Noto Serif JP',serif;color:var(--green);font-size:1.1rem;margin-bottom:1.2rem;font-weight:400}
 .intro-list{list-style:none}
-.intro-list li{font-size:.95rem;padding:.65rem 0;border-bottom:1px dashed var(--border);display:flex;align-items:flex-start;gap:9px;color:var(--text-mid)}
+.intro-list li{font-size:1rem;padding:.65rem 0;border-bottom:1px dashed var(--border);display:flex;align-items:flex-start;gap:9px;color:var(--text-mid)}
 .intro-list li:last-child{border-bottom:none}
 .intro-list li::before{content:'✓';color:var(--green);font-weight:500;flex-shrink:0;margin-top:1px}
 
 /* TAB */
 .tab-section{background:var(--white)}
-.tab-nav{display:flex;gap:0;margin-bottom:2.5rem;border-bottom:2px solid var(--border);max-width:700px}
+.tab-nav{display:flex;gap:0;margin-bottom:2.5rem;border-bottom:2px solid var(--border);max-width:700px;margin-left:auto;margin-right:auto}
 .tab-btn{padding:12px 28px;font-size:.96rem;font-family:'Noto Sans JP',sans-serif;font-weight:400;letter-spacing:.06em;background:none;border:none;color:var(--text-light);cursor:pointer;position:relative;transition:color .2s;white-space:nowrap}
 .tab-btn::after{content:'';position:absolute;bottom:-2px;left:0;width:100%;height:2px;background:var(--green);transform:scaleX(0);transition:transform .25s}
 .tab-btn.active{color:var(--green);font-weight:500}
@@ -154,56 +158,56 @@ section{padding:80px 5%}
 .tab-pane.active{display:block;animation:fadeUp .4s ease both}
 
 /* WHY */
-.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.4rem;margin-bottom:2.5rem}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.4rem;margin-bottom:2.5rem;max-width:960px;margin-left:auto;margin-right:auto}
 .why-card{background:var(--green-soft);border-radius:var(--radius);padding:2rem 1.8rem;border:1px solid var(--border);transition:all .3s}
 .why-card:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(74,124,89,.13);background:var(--white)}
 .why-icon{font-size:1.9rem;margin-bottom:1rem}
-.why-card h3{font-size:1.03rem;margin-bottom:.6rem;color:#1e3528;font-weight:500}
-.why-card p{font-size:.92rem;color:var(--text-light);line-height:1.95}
+.why-card h3{font-size:1.12rem;margin-bottom:.6rem;color:#1e3528;font-weight:600}
+.why-card p{font-size:.97rem;color:var(--text-light);line-height:2.0}
 
 /* DISEASE */
-.disease-grid{display:flex;flex-wrap:wrap;gap:.7rem;margin-bottom:2.5rem}
+.disease-grid{display:flex;flex-wrap:wrap;gap:.7rem;margin-bottom:2.5rem;max-width:960px;margin-left:auto;margin-right:auto}
 .disease-tag{background:var(--white);color:var(--green);border-radius:20px;padding:6px 16px;font-size:.8rem;border:1px solid var(--sage)}
 
 /* FLOW */
-.flow-list{display:flex;flex-direction:column;gap:1rem;max-width:680px}
+.flow-list{display:flex;flex-direction:column;gap:1rem;max-width:680px;margin:0 auto}
 .flow-item{background:var(--green-soft);border-radius:var(--radius);padding:1.6rem 2rem;display:grid;grid-template-columns:44px 1fr;gap:0 1.2rem;align-items:start;border:1px solid var(--border)}
 .flow-num{background:var(--green);color:var(--white);border-radius:50%;width:38px;height:38px;display:flex;align-items:center;justify-content:center;font-family:'Noto Serif JP',serif;font-size:.88rem;flex-shrink:0;margin-top:2px}
-.flow-body h3{font-size:1.02rem;color:#1e3528;margin-bottom:.35rem;font-weight:500}
-.flow-body p{font-size:.92rem;color:var(--text-light)}
+.flow-body h3{font-size:1.08rem;color:#1e3528;margin-bottom:.35rem;font-weight:600}
+.flow-body p{font-size:.97rem;color:var(--text-light)}
 
 /* OTHER SERVICES */
-.services-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;max-width:800px}
+.services-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;max-width:800px;margin:0 auto}
 .service-main{background:linear-gradient(135deg,var(--green-pale),var(--green-soft));border:1.5px solid var(--sage);border-radius:var(--radius);padding:2rem;position:relative;overflow:hidden}
 .service-badge{position:absolute;top:12px;right:14px;background:var(--green);color:#fff;font-size:.65rem;padding:3px 10px;border-radius:10px;letter-spacing:.1em}
 .service-other{background:var(--offwhite);border:1px solid var(--border);border-radius:var(--radius);padding:2rem}
 .service-icon{font-size:1.8rem;margin-bottom:.8rem}
-.service-title{font-family:'Noto Serif JP',serif;font-size:1.15rem;color:#1e3528;font-weight:400;margin-bottom:.7rem}
-.service-desc{font-size:.92rem;color:var(--text-mid);line-height:1.95}
-.service-list{list-style:none;font-size:.92rem;color:var(--text-mid);display:flex;flex-direction:column;gap:.7rem}
+.service-title{font-family:'Noto Serif JP',serif;font-size:1.22rem;color:#1e3528;font-weight:600;margin-bottom:.7rem}
+.service-desc{font-size:.97rem;color:var(--text-mid);line-height:2.0}
+.service-list{list-style:none;font-size:.97rem;color:var(--text-mid);display:flex;flex-direction:column;gap:.7rem}
 .service-list li{display:flex;align-items:center;gap:8px}
 .service-list li span{color:var(--green)}
 
 /* PROFILE */
 .profile-section{background:var(--offwhite)}
-.profile-inner{max-width:800px}
+.profile-inner{max-width:800px;margin:0 auto}
 .profile-card{background:var(--white);border-radius:var(--radius);padding:2.5rem;border:1px solid var(--border);box-shadow:0 2px 20px rgba(74,124,89,.07)}
 .profile-name{font-family:'Noto Serif JP',serif;font-size:1.45rem;color:#1e3528;font-weight:400;margin-bottom:.3rem}
 .profile-title{font-size:.78rem;color:var(--green);letter-spacing:.1em;margin-bottom:1.8rem}
-.profile-message{font-size:.98rem;color:var(--text-mid);line-height:2.2;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px dashed var(--border)}
+.profile-message{font-size:1.04rem;color:var(--text-mid);line-height:2.2;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px dashed var(--border)}
 .career-title{font-size:.72rem;letter-spacing:.2em;color:var(--green-mid);text-transform:uppercase;margin-bottom:1.2rem}
 .career-list{list-style:none;display:flex;flex-direction:column;gap:0}
 .career-item{display:grid;grid-template-columns:90px 1fr;gap:0 1.2rem;padding:.9rem 0;border-bottom:1px dashed var(--border);align-items:baseline}
 .career-item:last-child{border-bottom:none}
 .career-year{font-family:'Noto Serif JP',serif;font-size:.82rem;color:var(--green);font-weight:400;white-space:nowrap}
-.career-text{font-size:.95rem;color:var(--text-mid);line-height:1.8}
+.career-text{font-size:1rem;color:var(--text-mid);line-height:1.85}
 .qual-list{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.5rem}
 .qual-tag{background:var(--green-pale);color:var(--green);border-radius:20px;padding:5px 14px;font-size:.78rem;border:1px solid var(--sage)}
 
 /* CONTACT */
 .contact-section{background:var(--white);border-top:3px solid var(--green-pale)}
-.contact-lead{font-size:1rem;color:var(--text-mid);margin-bottom:2.5rem;line-height:2.1}
-.contact-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:2.5rem;max-width:980px;align-items:start}
+.contact-lead{font-size:1.06rem;color:var(--text-mid);margin-bottom:2.5rem;line-height:2.1}
+.contact-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:2.5rem;max-width:980px;align-items:start;margin:0 auto}
 .contact-info-box{background:var(--green-soft);border-radius:var(--radius);padding:2.2rem;border:1px solid var(--border)}
 .contact-label{font-size:.72rem;letter-spacing:.15em;color:var(--text-light);margin-bottom:.8rem}
 .contact-note{margin-top:1.5rem;padding:1rem;background:var(--white);border-radius:8px;font-size:.78rem;color:var(--text-mid);border:1px dashed var(--sage);line-height:1.8}
@@ -294,7 +298,7 @@ details[open] .faq-q{background:var(--green-soft);border-bottom:1px solid var(--
 .faq-a{padding:1.2rem 1.6rem;font-size:.95rem;color:var(--text-mid);line-height:2;background:var(--offwhite)}
 
 /* FOOTER */
-footer{background:#1e3528;color:rgba(255,255,255,.45);padding:2.5rem 5%;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem}
+footer{background:#1e3528;color:rgba(255,255,255,.45);padding:2.5rem max(5%,calc((100% - 1400px)/2));display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem}
 .footer-logo{font-family:'Noto Serif JP',serif;color:rgba(255,255,255,.75);font-size:.9rem;line-height:1.6}
 .footer-info{font-size:.75rem;line-height:1.9}
 .footer-copy{font-size:.72rem;width:100%;text-align:center;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.1);margin-top:.5rem}
@@ -306,14 +310,63 @@ footer{background:#1e3528;color:rgba(255,255,255,.45);padding:2.5rem 5%;display:
 }
 @media(max-width:768px){
   nav a:not(.nav-cta){display:none}
+  nav .nav-cta{display:none}
   .intro-inner{grid-template-columns:1fr;gap:2rem}
   .contact-grid{grid-template-columns:1fr;gap:1.5rem}
   .services-grid{grid-template-columns:1fr}
   .tab-btn{padding:10px 16px;font-size:.78rem}
   .radio-group{gap:.5rem}
-  .radio-label{font-size:.78rem;padding:5px 8px}
-  .logo{font-size:.95rem!important}
+  .radio-label{font-size:.78rem;padding:5px 8px;max-width:none!important}
+  .logo{font-size:1.05rem!important}
   .hero-text{padding:100px 5% 80px}
+  /* ヒーローバッジ：スマホで縦積み */
+  .hero-badges{flex-direction:column!important;gap:.4rem!important}
+  /* 無料相談ブロックカード：スマホで1列 */
+  .consult-cards{grid-template-columns:1fr!important}
+  /* 安心ブロック：スマホで1列 */
+  .anshin-grid{grid-template-columns:1fr!important}
+}
+
+/* ハンバーガーメニュー */
+.hamburger{
+  display:none;
+  background:none;border:none;cursor:pointer;
+  padding:6px 4px;color:var(--green);
+  font-size:1.55rem;line-height:1;
+  margin-left:auto;
+}
+.mobile-nav{
+  display:none;
+  position:fixed;top:72px;left:0;right:0;
+  background:#fff;z-index:99;
+  border-bottom:3px solid var(--sage);
+  box-shadow:0 6px 24px rgba(74,124,89,.13);
+  animation:fadeDown .2s ease both;
+}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
+.mobile-nav a{
+  display:block;padding:15px 6%;
+  font-size:.96rem;color:var(--text-mid);
+  text-decoration:none;
+  border-bottom:1px solid var(--border);
+  letter-spacing:.04em;
+  transition:background .15s;
+}
+.mobile-nav a:hover,.mobile-nav a.active{color:var(--green);background:var(--green-pale)}
+.mobile-nav .m-cta{
+  background:var(--green)!important;color:#fff!important;
+  text-align:center;font-weight:500;
+  margin:12px 6%;border-radius:24px;
+  border-bottom:none!important;
+}
+.mobile-nav.open{display:block}
+.mobile-overlay{
+  display:none;position:fixed;inset:0;z-index:98;
+  background:rgba(0,0,0,.25);
+}
+.mobile-overlay.open{display:block}
+@media(max-width:768px){
+  .hamburger{display:block}
 }
 </style>
 </head>
@@ -321,37 +374,53 @@ footer{background:#1e3528;color:rgba(255,255,255,.45);padding:2.5rem 5%;display:
 
 <!-- HEADER -->
 <header>
-  <div class="logo">太田社会保険労務士事務所（広島市中区）<span>障害年金専門 ／ 社会保険労務士</span></div>
+  <a href="/" class="logo">太田社会保険労務士事務所（広島市中区）<span>障害年金専門 ／ 社会保険労務士</span></a>
   <nav>
     <a href="#services">業務内容</a>
     <a href="#faq">よくある質問</a>
     <a href="#profile">代表者紹介</a>
     <a href="blog/index.html">ブログ</a>
     <a href="nenrei.html">年齢早見表</a>
-    <a href="#contact" class="nav-cta">無料相談</a>
+    <a href="#contact" class="nav-cta">無料相談（初回40分）</a>
   </nav>
+  <button class="hamburger" id="hamburger-btn" onclick="toggleMobileNav()" aria-label="メニューを開く">☰</button>
 </header>
+
+<!-- モバイルナビ -->
+<div class="mobile-overlay" id="mobile-overlay" onclick="closeMobileNav()"></div>
+<nav class="mobile-nav" id="mobile-nav">
+  <a href="#services" onclick="closeMobileNav()">業務内容</a>
+  <a href="#faq" onclick="closeMobileNav()">よくある質問</a>
+  <a href="#profile" onclick="closeMobileNav()">代表者紹介</a>
+  <a href="#free-consult" onclick="closeMobileNav()">無料相談について</a>
+  <a href="blog/index.html" onclick="closeMobileNav()">ブログ</a>
+  <a href="nenrei.html" onclick="closeMobileNav()">年齢早見表</a>
+  <a href="#contact" class="m-cta" onclick="closeMobileNav()">無料相談を申し込む（初回40分）</a>
+</nav>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
     <!-- 左：テキストコンテンツ -->
     <div class="hero-text">
-      <div class="hero-badge">📍 広島市中区・近隣エリア　障害年金専門</div>
+      <div class="hero-badges" style="display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.6rem">
+        <div class="hero-badge" style="margin-bottom:0">📍 広島市中区・近隣エリア限定　障害年金専門</div>
+        <div class="hero-badge" style="margin-bottom:0;background:#fff8f0;border-color:#f0c8a0;color:#b05a1a">🕐 初回40分まで無料（広島市・近隣の方のみ）</div>
+      </div>
       <h1>障害年金の申請、<br><em>広島で頼れる専門家</em>が<br>そばにいます。</h1>
       <p class="hero-lead">
         元・社会保険庁／日本年金機構職員として行政実務を経験した社労士が、<br>
         複雑な手続きをひとつひとつ丁寧にサポートします。<br>
-        広島市中区を中心に、近隣エリアの方はお気軽にご相談ください。
+        <strong style="color:var(--green)">広島市中区・近隣エリアの方が対象</strong>です。まずはお気軽にご相談ください。
       </p>
       <div class="hero-cta">
-        <a href="#contact" class="btn-primary">無料相談を申し込む</a>
+        <a href="#contact" class="btn-primary">無料相談を申し込む（初回40分）</a>
         <a href="#services" class="btn-outline">業務内容を見る</a>
       </div>
       <div class="hero-stat">
-        <div class="stat-item"><div class="stat-num">0<span>円</span></div><div class="stat-label">広島市近隣の方の初回相談料</div></div>
-        <div class="stat-item"><div class="stat-num">0<span>円</span></div><div class="stat-label">不支給の場合の費用</div></div>
-        <div class="stat-item"><div class="stat-num" style="font-size:1.1rem;padding-top:4px">受給<span>決定後</span></div><div class="stat-label">報酬のお支払いは受給決定後のみ</div></div>
+        <div class="stat-item"><div class="stat-num" style="font-size:1.9rem;padding-top:2px">40<span style="font-size:1.1rem">分無料</span></div><div class="stat-label">初回相談（対面 or Zoom）</div></div>
+        <div class="stat-item"><div class="stat-num">0<span>円</span></div><div class="stat-label">受給できなかった場合の費用</div></div>
+        <div class="stat-item"><div class="stat-num" style="font-size:1.6rem;padding-top:4px">受給<span style="font-size:1.1rem">決定後</span></div><div class="stat-label">報酬が発生するのは受給決定後のみ</div></div>
       </div>
     </div>
 
@@ -495,6 +564,62 @@ footer{background:#1e3528;color:rgba(255,255,255,.45);padding:2.5rem 5%;display:
   </div>
 </section>
 
+<!-- 無料相談説明ブロック -->
+<section style="background:var(--green-soft);border-top:3px solid var(--sage);border-bottom:3px solid var(--sage)" id="free-consult">
+  <span class="sec-en">Free Consultation</span>
+  <h2 class="sec-title">無料相談について、事前にご確認ください</h2>
+  <div class="divider"></div>
+
+  <!-- 対象エリア警告ボックス -->
+  <div style="background:linear-gradient(135deg,#1e3528,#2d5438);border-radius:var(--radius);padding:1.8rem 2rem;margin-bottom:2.5rem;max-width:860px;margin-left:auto;margin-right:auto;display:flex;gap:1.2rem;align-items:flex-start">
+    <div style="font-size:1.6rem;flex-shrink:0;line-height:1">📍</div>
+    <div>
+      <div style="color:#fff;font-weight:500;font-size:1.05rem;margin-bottom:.5rem;letter-spacing:.03em">対象エリア：広島市・近隣エリアの方のみ</div>
+      <p style="color:rgba(255,255,255,.8);font-size:1rem;line-height:1.95;margin:0">
+        当事務所の無料相談は、<strong style="color:#c8dcc9">広島市内および近隣エリアにお住まいの方を対象</strong>としております。<br>
+        遠方の方・エリア外の方のご相談は、現在お受けしておりません。<br>
+        <span style="font-size:.92rem;color:rgba(255,255,255,.6)">※ 近隣エリアに特化したきめ細かいサポートを心がけているため、対応エリアを限定しております。</span>
+      </p>
+    </div>
+  </div>
+
+  <div class="consult-cards" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.3rem;max-width:900px;margin:0 auto">
+
+    <!-- カード①：無料の条件 -->
+    <div style="background:var(--white);border-radius:var(--radius);padding:1.8rem;border:1.5px solid var(--sage)">
+      <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:1.1rem">
+        <div style="background:var(--green);color:#fff;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0">✓</div>
+        <h3 style="font-family:'Noto Serif JP',serif;font-size:1.15rem;font-weight:500;color:#1e3528;margin:0">初回相談の条件</h3>
+      </div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:.65rem">
+        <li style="font-size:1rem;color:var(--text-mid);display:flex;gap:8px;align-items:flex-start"><span style="color:var(--green);flex-shrink:0;margin-top:1px">●</span><span><strong>時間：</strong>40分まで無料</span></li>
+        <li style="font-size:1rem;color:var(--text-mid);display:flex;gap:8px;align-items:flex-start"><span style="color:var(--green);flex-shrink:0;margin-top:1px">●</span><span><strong>方法：</strong>対面（広島市内カフェ）またはZoom</span></li>
+        <li style="font-size:1rem;color:var(--text-mid);display:flex;gap:8px;align-items:flex-start"><span style="color:var(--green);flex-shrink:0;margin-top:1px">●</span><span><strong>対象：</strong>広島市・近隣エリアの方で、障害年金の申請を本格的にお考えの方</span></li>
+      </ul>
+      <div style="margin-top:1.2rem;padding:.85rem 1rem;background:var(--green-pale);border-radius:8px;font-size:.93rem;color:var(--text-mid);line-height:1.85;border:1px dashed var(--sage)">
+        単なる情報収集・お試し目的のみのご相談は、費用が発生する場合があります。まずはフォームでご状況をお聞かせください。
+      </div>
+    </div>
+
+    <!-- カード③：費用 -->
+    <div style="background:var(--white);border-radius:var(--radius);padding:1.8rem;border:1.5px solid var(--sage)">
+      <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:1.1rem">
+        <div style="background:var(--green);color:#fff;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0">💴</div>
+        <h3 style="font-family:'Noto Serif JP',serif;font-size:1.15rem;font-weight:500;color:#1e3528;margin:0">費用について</h3>
+      </div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:.65rem">
+        <li style="font-size:1rem;color:var(--text-mid);display:flex;gap:8px;align-items:flex-start"><span style="color:var(--green);flex-shrink:0;margin-top:1px">●</span><span><strong>初回相談（条件内）：</strong>無料</span></li>
+        <li style="font-size:1rem;color:var(--text-mid);display:flex;gap:8px;align-items:flex-start"><span style="color:var(--green);flex-shrink:0;margin-top:1px">●</span><span><strong>申請サポート：</strong>受給決定後にお支払い（成功報酬制）</span></li>
+        <li style="font-size:1rem;color:var(--text-mid);display:flex;gap:8px;align-items:flex-start"><span style="color:var(--green);flex-shrink:0;margin-top:1px">●</span><span><strong>受給できなかった場合：</strong>費用は一切かかりません</span></li>
+      </ul>
+      <div style="margin-top:1.2rem;padding:.85rem 1rem;background:var(--green-pale);border-radius:8px;font-size:.93rem;color:var(--text-mid);line-height:1.85;border:1px dashed var(--sage)">
+        相談後に「やっぱりやめておこう」となっても問題ありません。無理な営業は一切いたしません。
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- SERVICES タブ -->
 <section class="tab-section" id="services">
   <span class="sec-en">Services</span>
@@ -509,10 +634,10 @@ footer{background:#1e3528;color:rgba(255,255,255,.45);padding:2.5rem 5%;display:
   <!-- タブ1：障害年金 -->
   <div class="tab-pane active" id="tab-pension">
     <div class="why-grid">
+      <div class="why-card"><div class="why-icon">🪪</div><h3>すべて有資格者が一貫対応</h3><p>受付から相談・手続きまで、社会保険労務士が直接担当します。無資格のスタッフが窓口に立つことはありません。</p></div>
       <div class="why-card"><div class="why-icon">🔍</div><h3>行政実務を知る社労士</h3><p>社会保険庁・日本年金機構での勤務経験から、申請手続きの仕組みや審査の流れを理解しています。その知識を活かして丁寧にサポートします。</p></div>
       <div class="why-card"><div class="why-icon">📋</div><h3>書類作成をすべて代行</h3><p>診断書のサポートから申請書類の作成まで、煩雑な手続きをすべてお任せいただけます。</p></div>
       <div class="why-card"><div class="why-icon">🌿</div><h3>広島市近隣の方は初回相談無料・費用は受給後のみ</h3><p>広島市近隣の方の初回相談は無料です。報酬は年金の受給が決定した後にのみいただきます。不支給の場合、費用は一切かかりません。</p></div>
-      <div class="why-card"><div class="why-icon">🤝</div><h3>申請完了まで丁寧に伴走</h3><p>受給決定まで一貫してサポートします。途中でわからないことが出てきても、いつでもご相談いただけます。</p></div>
     </div>
 
     <h3 style="font-family:'Noto Serif JP',serif;font-size:1rem;font-weight:400;color:#1e3528;margin-bottom:1rem">主な対応疾患・障害</h3>
@@ -543,7 +668,7 @@ footer{background:#1e3528;color:rgba(255,255,255,.45);padding:2.5rem 5%;display:
 
   <!-- タブ2：その他業務 -->
   <div class="tab-pane" id="tab-labor">
-    <p style="font-size:.88rem;color:var(--text-mid);margin-bottom:2rem;line-height:2;max-width:680px">
+    <p style="font-size:.88rem;color:var(--text-mid);margin-bottom:2rem;line-height:2;max-width:680px;margin-left:auto;margin-right:auto">
       障害年金申請のサポートをメインとしながら、社会保険労務士・行政書士試験合格者として幅広い業務にも対応しています。お気軽にご相談ください。
     </p>
     <div class="services-grid">
@@ -625,7 +750,7 @@ footer{background:#1e3528;color:rgba(255,255,255,.45);padding:2.5rem 5%;display:
   <span class="sec-en">FAQ</span>
   <h2 class="sec-title">よくあるご質問</h2>
   <div class="divider"></div>
-  <div style="max-width:740px;display:flex;flex-direction:column;gap:.8rem">
+  <div style="max-width:740px;margin:0 auto;display:flex;flex-direction:column;gap:.8rem">
 
     <details class="faq-item">
       <summary class="faq-q">障害年金とはどのような制度ですか？</summary>
@@ -657,7 +782,7 @@ footer{background:#1e3528;color:rgba(255,255,255,.45);padding:2.5rem 5%;display:
 
     <details class="faq-item">
       <summary class="faq-q">対応エリアはどこですか？</summary>
-      <div class="faq-a">主に広島市中区・近隣エリアの方を対象としています。エリア外の方もまずはフォームよりご相談ください。状況に応じて対応可否をお伝えします。</div>
+      <div class="faq-a">広島市中区・近隣エリアにお住まいの方を対象としています。対面での継続的なサポートを重視しているため、<strong>エリア外の方のご相談は現在お受けしておりません</strong>。ご不便をおかけしますが、あらかじめご了承ください。</div>
     </details>
 
     <details class="faq-item">
@@ -670,9 +795,39 @@ footer{background:#1e3528;color:rgba(255,255,255,.45);padding:2.5rem 5%;display:
 
 <!-- CONTACT -->
 <section class="contact-section" id="contact">
-  <span class="sec-en">Free Consultation</span>
+  <span class="sec-en">Contact</span>
   <h2 class="sec-title">まずはお気軽にご相談ください</h2>
   <div class="divider"></div>
+
+  <!-- 安心ブロック -->
+  <div style="max-width:860px;margin:0 auto 2.2rem">
+    <div style="background:var(--green-soft);border-radius:var(--radius);padding:1.6rem 2rem;border:1px solid var(--border)">
+      <p style="font-size:.85rem;letter-spacing:.12em;color:var(--green-mid);text-transform:uppercase;margin-bottom:.8rem">フォームを送る前にご確認ください</p>
+      <div class="anshin-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.8rem">
+        <div style="display:flex;gap:.7rem;align-items:flex-start">
+          <span style="color:var(--green);font-size:1.1rem;flex-shrink:0;line-height:1.4">✅</span>
+          <div><strong style="font-size:1rem;color:#1e3528;display:block;margin-bottom:.25rem">有資格者が直接対応します</strong><span style="font-size:.95rem;color:var(--text-light);line-height:1.8">受付から相談・手続きまで、社会保険労務士が一貫して担当。無資格スタッフが対応することはありません。</span></div>
+        </div>
+        <div style="display:flex;gap:.7rem;align-items:flex-start">
+          <span style="color:var(--green);font-size:1.1rem;flex-shrink:0;line-height:1.4">✅</span>
+          <div><strong style="font-size:1rem;color:#1e3528;display:block;margin-bottom:.25rem">無理な営業はしません</strong><span style="font-size:.95rem;color:var(--text-light);line-height:1.8">相談後にお断りいただいても、まったく問題ありません。</span></div>
+        </div>
+        <div style="display:flex;gap:.7rem;align-items:flex-start">
+          <span style="color:var(--green);font-size:1.1rem;flex-shrink:0;line-height:1.4">✅</span>
+          <div><strong style="font-size:1rem;color:#1e3528;display:block;margin-bottom:.25rem">情報は外部に漏れません</strong><span style="font-size:.95rem;color:var(--text-light);line-height:1.8">当事務所のみが確認します。第三者への提供は一切しません。</span></div>
+        </div>
+        <div style="display:flex;gap:.7rem;align-items:flex-start">
+          <span style="color:var(--green);font-size:1.1rem;flex-shrink:0;line-height:1.4">✅</span>
+          <div><strong style="font-size:1rem;color:#1e3528;display:block;margin-bottom:.25rem">はじめての方も大丈夫です</strong><span style="font-size:.95rem;color:var(--text-light);line-height:1.8">「何から話せばいいかわからない」という方も歓迎します。</span></div>
+        </div>
+        <div style="display:flex;gap:.7rem;align-items:flex-start">
+          <span style="color:var(--green);font-size:1.1rem;flex-shrink:0;line-height:1.4">✅</span>
+          <div><strong style="font-size:1rem;color:#1e3528;display:block;margin-bottom:.25rem">費用は受給決定後のみ</strong><span style="font-size:.95rem;color:var(--text-light);line-height:1.8">相談・申請途中では費用は発生しません。</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <p class="contact-lead">
     障害年金の申請サポートはもちろん、労務・人事や外国人雇用に関するご相談も承っております。<br>
     フォームよりご連絡ください。通常3営業日以内にご返信いたします。
@@ -690,21 +845,16 @@ footer{background:#1e3528;color:rgba(255,255,255,.45);padding:2.5rem 5%;display:
       </div>
 
       <div class="contact-note" style="margin-top:1.2rem">
-        <strong style="display:block;color:var(--green);font-size:.8rem;margin-bottom:.4rem">📧 ご連絡・ご相談はメールのみ</strong>
-        連絡および相談のやり取りは、原則としてメールで行います。お電話でのご対応はしておりません。フォーム送信後、ご登録のメールアドレス宛にご返信します。
-      </div>
-
-      <div class="contact-note" style="margin-top:.8rem">
-        <strong style="display:block;color:var(--green);font-size:.8rem;margin-bottom:.4rem">🤝 対面・オンライン相談について</strong>
-        <span style="font-size:.78rem;line-height:1.85;color:var(--text-mid);display:block">
-          受給の可能性があり、業務委託契約をご希望の方には、対面またはオンラインでの相談を実施します（<strong style="color:var(--green)">無料</strong>）。<br>
-          契約に至らない単なるご相談については、費用が発生する場合があります。
+        <strong style="display:block;color:var(--green);font-size:.97rem;margin-bottom:.4rem">🤝 初回40分無料（広島市・近隣の方のみ）</strong>
+        <span style="font-size:.93rem;line-height:1.85;color:var(--text-mid);display:block">
+          広島市・近隣エリアの方で、障害年金の申請を本格的にお考えの方の初回相談は<strong style="color:var(--green)">40分まで無料</strong>です。<br>
+          <strong style="color:#b05a1a">エリア外の方のご相談は現在お受けしておりません。</strong>
         </span>
       </div>
 
       <div class="contact-note" style="margin-top:.8rem">
-        <strong style="display:block;color:var(--green);font-size:.8rem;margin-bottom:.4rem">💴 報酬の目安（障害年金）</strong>
-        <span style="font-size:.78rem;line-height:1.85;color:var(--text-mid);display:block">
+        <strong style="display:block;color:var(--green);font-size:.97rem;margin-bottom:.4rem">💴 報酬の目安（障害年金）</strong>
+        <span style="font-size:.93rem;line-height:1.85;color:var(--text-mid);display:block">
           受給決定後にのみいただきます。<br>
           <strong style="color:#1e3528">受給年金の1〜2か月分</strong>、または<strong style="color:#1e3528">初回振込額の10%</strong>のうち、いずれか高い方。<br>
           不支給の場合は費用ゼロです。
@@ -712,8 +862,8 @@ footer{background:#1e3528;color:rgba(255,255,255,.45);padding:2.5rem 5%;display:
       </div>
 
       <div class="contact-note" style="margin-top:.8rem">
-        <strong style="display:block;color:var(--green);font-size:.8rem;margin-bottom:.3rem">📍 事務所の場所</strong>
-        <span style="font-size:.78rem;color:var(--text-mid);line-height:1.85;display:block">
+        <strong style="display:block;color:var(--green);font-size:.97rem;margin-bottom:.3rem">📍 事務所の場所</strong>
+        <span style="font-size:.93rem;color:var(--text-mid);line-height:1.85;display:block">
           広島市中区・吉島バス通りよりすぐ
         </span>
       </div>
@@ -764,15 +914,48 @@ footer{background:#1e3528;color:rgba(255,255,255,.45);padding:2.5rem 5%;display:
               <label>お住まいのエリア<span class="req">*</span></label>
               <div class="radio-group">
                 <label class="radio-label">
-                  <input type="radio" name="area" value="広島市・近隣エリア">
+                  <input type="radio" name="area" value="広島市・近隣エリア" onchange="toggleAreaWarning(this.value)">
                   <span>広島市・近隣エリア</span>
                 </label>
                 <label class="radio-label">
-                  <input type="radio" name="area" value="それ以外">
+                  <input type="radio" name="area" value="それ以外" onchange="toggleAreaWarning(this.value)">
                   <span>それ以外の地域</span>
                 </label>
               </div>
               <div class="form-error-msg" id="err-area">お住まいのエリアを選択してください</div>
+              <!-- エリア外警告 -->
+              <div id="area-warning" style="display:none;margin-top:.8rem;padding:1rem 1.2rem;background:#fdf4f0;border-radius:8px;border:1.5px solid #e8b8a0">
+                <strong style="color:#b05a1a;font-size:.85rem;display:block;margin-bottom:.3rem">⚠️ 大変申し訳ございません</strong>
+                <p style="font-size:.82rem;color:#6b3a20;line-height:1.85;margin:0">
+                  当事務所の相談対応は<strong>広島市・近隣エリアの方を対象</strong>としております。<br>
+                  エリア外の方のご相談は現在お受けしておりません。<br>
+                  <span style="font-size:.75rem;color:#999">地域に密着した対面サポートを重視しているためです。ご理解のほどよろしくお願いいたします。</span>
+                </p>
+              </div>
+            </div>
+
+            <!-- ご希望の相談方法（エリア内の方のみ表示） -->
+            <div class="form-field" id="method-field">
+              <label>ご希望の相談方法<span class="req">*</span></label>
+              <div class="radio-group" style="flex-direction:column;gap:.5rem">
+                <label class="radio-label" style="width:100%;max-width:360px">
+                  <input type="radio" name="consult_method" value="対面（広島市内カフェ）">
+                  <span>🏠 対面（広島市内・近隣カフェ）</span>
+                </label>
+                <label class="radio-label" style="width:100%;max-width:360px">
+                  <input type="radio" name="consult_method" value="Zoom（オンライン）">
+                  <span>💻 Zoom（オンライン）</span>
+                </label>
+                <label class="radio-label" style="width:100%;max-width:360px">
+                  <input type="radio" name="consult_method" value="メール">
+                  <span>📧 メールでのやり取り</span>
+                </label>
+                <label class="radio-label" style="width:100%;max-width:360px">
+                  <input type="radio" name="consult_method" value="まだ決めていない">
+                  <span>まだ決めていない</span>
+                </label>
+              </div>
+              <div class="form-error-msg" id="err-method">ご希望の相談方法を選択してください</div>
             </div>
 
             <!-- 相談種別 -->
@@ -871,8 +1054,16 @@ footer{background:#1e3528;color:rgba(255,255,255,.45);padding:2.5rem 5%;display:
               <div class="form-error-msg" id="err-consent">個人情報の取り扱いへの同意が必要です</div>
             </div>
 
+            <!-- CTA前テキスト -->
+            <div style="text-align:center;margin-top:1.2rem;margin-bottom:.5rem;padding:.9rem 1rem;background:var(--green-pale);border-radius:8px;border:1px solid var(--sage)">
+              <p style="font-size:.82rem;color:var(--green);font-weight:500;margin:0;line-height:1.75">
+                初回40分まで無料　｜　対面（広島市内カフェ）またはZoom<br>
+                <span style="font-weight:300;color:var(--text-mid)">まずは受給の可能性をご確認ください</span>
+              </p>
+            </div>
+
             <button type="submit" class="form-submit" id="submit-btn">
-              送信する
+              無料相談を申し込む（初回40分）
             </button>
           </form>
         </div>
@@ -912,6 +1103,37 @@ footer{background:#1e3528;color:rgba(255,255,255,.45);padding:2.5rem 5%;display:
 </footer>
 
 <script>
+/* ハンバーガーメニュー */
+function toggleMobileNav() {
+  const nav = document.getElementById('mobile-nav');
+  const overlay = document.getElementById('mobile-overlay');
+  const btn = document.getElementById('hamburger-btn');
+  const isOpen = nav.classList.contains('open');
+  nav.classList.toggle('open', !isOpen);
+  overlay.classList.toggle('open', !isOpen);
+  btn.textContent = isOpen ? '☰' : '✕';
+}
+function closeMobileNav() {
+  document.getElementById('mobile-nav').classList.remove('open');
+  document.getElementById('mobile-overlay').classList.remove('open');
+  document.getElementById('hamburger-btn').textContent = '☰';
+}
+
+/* エリア選択による警告表示 */
+function toggleAreaWarning(val) {
+  const warning = document.getElementById('area-warning');
+  const methodField = document.getElementById('method-field');
+  if (val === 'それ以外') {
+    warning.style.display = 'block';
+    if (methodField) methodField.style.display = 'none';
+    // 相談方法の選択をリセット
+    document.querySelectorAll('input[name="consult_method"]').forEach(r => r.checked = false);
+  } else {
+    warning.style.display = 'none';
+    if (methodField) methodField.style.display = '';
+  }
+}
+
 /* タブ切り替え */
 function switchTab(id) {
   document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
@@ -953,6 +1175,22 @@ function validateForm() {
     valid = false;
   } else {
     errArea.classList.remove('visible');
+    // エリア外の場合は送信を止める
+    if (areaChecked.value === 'それ以外') {
+      document.getElementById('area-warning').style.display = 'block';
+      document.getElementById('area-warning').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return false;
+    }
+  }
+
+  // 相談方法チェック（エリア内の方のみ）
+  const methodChecked = document.querySelector('input[name="consult_method"]:checked');
+  const errMethod = document.getElementById('err-method');
+  if (!methodChecked) {
+    if (errMethod) errMethod.classList.add('visible');
+    valid = false;
+  } else {
+    if (errMethod) errMethod.classList.remove('visible');
   }
 
   fields.forEach(({ id, errId, check }) => {
@@ -1034,6 +1272,10 @@ document.querySelectorAll('input[name="area"]').forEach(el => {
     document.getElementById('err-area').classList.remove('visible');
   });
 });
+document.querySelectorAll('input[name="consult_method"]').forEach(el => {
+  el.addEventListener('change', () => {
+    const err = document.getElementById('err-method');
+    if (err) err.classList.remove('visible');
+  });
+});
 </script>
-</body>
-</html>
