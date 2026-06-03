@@ -195,16 +195,17 @@ async function loadPosts() {
 
     if (!res.ok) throw new Error(`API Error: ${res.status}`);
     const data = await res.json();
-    allPosts = data.contents;
+    // リスト形式(contents配列)・配列直返し・オブジェクト形式のいずれでも動くように吸収
+    allPosts = Array.isArray(data) ? data
+             : (data && Array.isArray(data.contents)) ? data.contents
+             : (data && data.id) ? [data] : [];
 
-    // カテゴリを収集してボタンを追加
     buildCategoryNav(allPosts);
-
-    // 記事一覧を表示
     renderPosts(allPosts);
 
   } catch (err) {
     clearTimeout(timer);
+    console.error('[blog] 読み込み失敗:', err);
     const isTimeout = err.name === 'AbortError';
     listEl.innerHTML = `
       <div class="error-msg">
@@ -217,8 +218,14 @@ async function loadPosts() {
   }
 }
 
+function getCats(p) {
+  let c = p.category;
+  if (!c) return [];
+  if (!Array.isArray(c)) c = [c];
+  return c.map(x => (x && typeof x === 'object') ? (x.name || x.id || '') : x).filter(Boolean);
+}
 function buildCategoryNav(posts) {
-  const cats = [...new Set(posts.flatMap(p => (p.category || []).map(c => c.name || c)))].filter(Boolean);
+  const cats = [...new Set(posts.flatMap(getCats))].filter(Boolean);
   const nav = document.getElementById('cat-nav');
   cats.forEach(cat => {
     const btn = document.createElement('button');
@@ -236,9 +243,7 @@ function filterByCat(cat, btn) {
   if (cat === '') {
     renderPosts(allPosts);
   } else {
-    const filtered = allPosts.filter(p =>
-      (p.category || []).some(c => (c.name || c) === cat)
-    );
+    const filtered = allPosts.filter(p => getCats(p).includes(cat));
     renderPosts(filtered);
   }
 }
@@ -267,7 +272,7 @@ function renderPosts(posts) {
     return;
   }
   listEl.innerHTML = posts.map(post => {
-    const cats = (post.category || []).map(c => c.name || c);
+    const cats = getCats(post);
     const catTag = cats.length ? `<span class="post-cat">${cats[0]}</span>` : '';
     const excerpt = post.excerpt || stripHtml(post.body || post.content || '');
     const eyecatchUrl = post.eyecatch ? post.eyecatch.url : '';
