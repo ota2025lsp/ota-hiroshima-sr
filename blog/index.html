@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>文章にはAIは絶対に使わないブログ｜太田社会保険労務士事務所【広島・障害年金】</title>
-<meta name="description" content="広島市中区の太田社会保険労務士事務所による、気ままなブログ記事一覧です。">
+<meta name="description" content="社労士が書く、ちょっとまじめで、たまにどうでもいいブログ。障害年金の話から、日々の気づき、広島のこと。役に立つかどうかは保証しません。">
 <link rel="canonical" href="https://ota-hiroshima-sr.com/blog/">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
@@ -82,8 +82,8 @@ footer{background:#1e3528;color:rgba(255,255,255,.45);padding:2.5rem 5%;display:
 .footer-copy{font-size:.82rem;width:100%;text-align:center;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.1);margin-top:.5rem}
 
 @media(max-width:768px){
-  nav a:not(.nav-cta){display:none}
-  nav .nav-cta{display:none}
+  header nav a:not(.nav-cta){display:none}
+  header nav .nav-cta{display:none}
   .post-card{grid-template-columns:1fr;padding:1.4rem 1.2rem}
   .post-arrow{display:none}
   .hamburger{display:block}
@@ -106,8 +106,9 @@ footer{background:#1e3528;color:rgba(255,255,255,.45);padding:2.5rem 5%;display:
 <body>
 
 <header>
-  <a href="../index.html" class="logo">広島　太田社会保険労務士事務所<span>広島市中区 ／ 障害年金・社会保険労務</span></a>
+  <a href="../index.html" class="logo">太田社会保険労務士事務所（広島市中区）<span>障害年金専門 ／ 社会保険労務士</span></a>
   <nav>
+    <a href="../index.html">ホーム</a>
     <a href="../index.html#services">業務内容</a>
     <a href="../index.html#faq">よくある質問</a>
     <a href="../index.html#profile">代表者紹介</a>
@@ -120,6 +121,7 @@ footer{background:#1e3528;color:rgba(255,255,255,.45);padding:2.5rem 5%;display:
 
 <div class="mobile-overlay" id="mobile-overlay" onclick="closeMobileNav()"></div>
 <nav class="mobile-nav" id="mobile-nav">
+  <a href="../index.html" onclick="closeMobileNav()">🏠 ホームへ戻る</a>
   <a href="../index.html#services" onclick="closeMobileNav()">業務内容</a>
   <a href="../index.html#faq" onclick="closeMobileNav()">よくある質問</a>
   <a href="../index.html#profile" onclick="closeMobileNav()">代表者紹介</a>
@@ -135,7 +137,7 @@ footer{background:#1e3528;color:rgba(255,255,255,.45);padding:2.5rem 5%;display:
       <a href="../index.html">ホーム</a><span>›</span>ブログ
     </div>
     <h1>文章にはAIは絶対に使わないブログ</h1>
-    <p>障害年金・社会保険・労務に関する情報をお届けします。</p>
+    <p>社労士が書く、ちょっとまじめで、たまにどうでもいいブログ。<br>年金のことも、それ以外のことも。</p>
   </div>
 </div>
 
@@ -155,17 +157,24 @@ footer{background:#1e3528;color:rgba(255,255,255,.45);padding:2.5rem 5%;display:
 
 <footer>
   <div class="footer-logo">太田社会保険労務士事務所<br><span style="font-size:.75rem;font-family:'Noto Sans JP',sans-serif;font-weight:300">広島市中区 ／ 障害年金専門</span></div>
-  <div class="footer-info">広島市中区・吉島バス通りよりすぐ<br>お問い合わせはフォームよりお願いします</div>
+  <div class="footer-info">広島市中区・吉島バス通りよりすぐ<br>お問い合わせはフォームよりお願いします<br>社会保険労務士登録番号 第34250008号</div>
   <div class="footer-links" style="font-size:.72rem;width:100%;text-align:center;margin-bottom:.3rem"><a href="../privacy.html" style="color:rgba(255,255,255,.5);text-decoration:none;margin:0 .8rem">個人情報保護方針</a></div>
   <div class="footer-copy">© 2026 太田社会保険労務士事務所　All Rights Reserved.</div>
 </footer>
 
 <script>
 // ============================================================
-// ★ ここを自分の情報に書き換えてください ★
+// ★ APIキーのセキュリティについて ★
+//  静的サイトのため、このAPIキーはブラウザに露出します。
+//  microCMS公式見解では、以下を満たせば露出していても問題ありません：
+//   (1) このキーの権限を「GET」のみにする（POST/PUT/PATCH/DELETEを外す）
+//   (2) 「GET（下書き全取得）」は付与しない
+//   → 上記なら公開済みの記事しか読めず、実害はほぼありません。
+//  もし書き込み・管理権限が付いたキーを貼っていた場合は、今すぐ再発行を。
+//  ※ 完全に隠したい場合はサーバーサイド（SSG/SSR）での取得が必要です。
 // ============================================================
-const MICROCMS_SERVICE_ID = 'ota-sr-blog';  // 例: ota-sr-blog
-const MICROCMS_API_KEY    = 'IRWZzuuADcmByOu7qSkOV8DNcNQ6FGILzRPD';      // microCMSの管理画面でコピー
+const MICROCMS_SERVICE_ID = 'ota-sr-blog';
+const MICROCMS_API_KEY    = 'IRWZzuuADcmByOu7qSkOV8DNcNQ6FGILzRPD'; // ← 権限はGETのみ・下書き全取得なしにすること
 // ============================================================
 
 let allPosts = [];
@@ -261,9 +270,14 @@ function renderPosts(posts) {
     const cats = (post.category || []).map(c => c.name || c);
     const catTag = cats.length ? `<span class="post-cat">${cats[0]}</span>` : '';
     const excerpt = post.excerpt || stripHtml(post.body || post.content || '');
+    const eyecatchUrl = post.eyecatch ? post.eyecatch.url : '';
+    const eyecatchHtml = eyecatchUrl
+      ? `<img src="${eyecatchUrl}" alt="${post.title}" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:.8rem;display:block;">`
+      : '';
     return `
       <a class="post-card" href="post.html?id=${post.id}">
         <div>
+          ${eyecatchHtml}
           <div class="post-meta">
             <span class="post-date">${formatDate(post.publishedAt)}</span>
             ${catTag}

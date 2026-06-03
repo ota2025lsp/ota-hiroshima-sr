@@ -21,8 +21,8 @@
 html{scroll-behavior:smooth}
 body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--white);line-height:1.9;font-weight:300}
 
-header{position:fixed;top:0;width:100%;z-index:100;background:rgba(255,255,255,0.97);border-bottom:1px solid var(--border);padding:0 5%;height:62px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 1px 12px rgba(74,124,89,0.08)}
-.logo{font-family:'Noto Serif JP',serif;color:var(--green);font-size:.95rem;letter-spacing:.04em;line-height:1.35;text-decoration:none}
+header{position:fixed;top:0;width:100%;z-index:100;background:rgba(255,255,255,0.97);border-bottom:1px solid var(--border);padding:0 5%;height:72px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 1px 12px rgba(74,124,89,0.08)}
+.logo{font-family:'Noto Serif JP',serif;color:var(--green);font-size:1.45rem;letter-spacing:.04em;line-height:1.3;text-decoration:none}
 .logo span{font-size:.67rem;font-weight:300;color:var(--text-light);display:block;letter-spacing:.1em}
 nav{display:flex;gap:1.5rem;align-items:center}
 nav a{color:var(--text-mid);text-decoration:none;font-size:.8rem;letter-spacing:.06em;transition:color .2s}
@@ -69,21 +69,46 @@ footer{background:#1e3528;color:rgba(255,255,255,.45);padding:2.5rem 5%;display:
 
 @media(max-width:768px){
   nav a:not(.nav-cta){display:none}
+  nav .nav-cta{display:none}
+  .hamburger{display:block}
   .policy-box{padding:1.8rem 1.5rem}
 }
+
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:6px 4px;color:var(--green);font-size:1.55rem;line-height:1;margin-left:auto}
+.mobile-nav{display:none;position:fixed;top:72px;left:0;right:0;background:#fff;z-index:99;border-bottom:3px solid var(--border);box-shadow:0 6px 24px rgba(74,124,89,.13)}
+.mobile-nav a{display:block;padding:15px 6%;font-size:.96rem;color:var(--text-mid);text-decoration:none;border-bottom:1px solid var(--border);letter-spacing:.04em;transition:background .15s}
+.mobile-nav a:hover,.mobile-nav a.active{color:var(--green);background:#eaf3ec}
+.mobile-nav .m-cta{background:var(--green)!important;color:#fff!important;text-align:center;font-weight:500;margin:12px 6%;border-radius:24px;border-bottom:none!important}
+.mobile-nav.open{display:block}
+.mobile-overlay{display:none;position:fixed;inset:0;z-index:98;background:rgba(0,0,0,.25)}
+.mobile-overlay.open{display:block}
 </style>
 </head>
 <body>
 
 <header>
-  <a href="index.html" class="logo">広島　太田社会保険労務士事務所<span>広島市中区 ／ 障害年金・社会保険労務</span></a>
+  <a href="index.html" class="logo">太田社会保険労務士事務所（広島市中区）<span>障害年金専門 ／ 社会保険労務士</span></a>
   <nav>
     <a href="index.html#services">業務内容</a>
     <a href="index.html#faq">よくある質問</a>
     <a href="index.html#profile">代表者紹介</a>
-    <a href="index.html#contact" class="nav-cta">無料相談</a>
+    <a href="blog/index.html">ブログ</a>
+    <a href="nenrei.html">年齢早見表</a>
+    <a href="index.html#contact" class="nav-cta">無料相談（初回40分）</a>
   </nav>
+  <button class="hamburger" id="hamburger-btn" onclick="toggleMobileNav()" aria-label="メニューを開く">☰</button>
 </header>
+
+<div class="mobile-overlay" id="mobile-overlay" onclick="closeMobileNav()"></div>
+<nav class="mobile-nav" id="mobile-nav">
+  <a href="index.html" onclick="closeMobileNav()">🏠 ホームへ戻る</a>
+  <a href="index.html#services" onclick="closeMobileNav()">業務内容</a>
+  <a href="index.html#faq" onclick="closeMobileNav()">よくある質問</a>
+  <a href="index.html#profile" onclick="closeMobileNav()">代表者紹介</a>
+  <a href="blog/index.html" onclick="closeMobileNav()">ブログ</a>
+  <a href="nenrei.html" onclick="closeMobileNav()">年齢早見表</a>
+  <a href="index.html#contact" class="m-cta" onclick="closeMobileNav()">無料相談を申し込む（初回40分）</a>
+</nav>
 
 <div class="page-hero">
   <div class="page-hero-inner">
@@ -116,6 +141,7 @@ footer{background:#1e3528;color:rgba(255,255,255,.45);padding:2.5rem 5%;display:
           <li>就労状況・申請経験（任意）</li>
           <li>お問い合わせ内容</li>
         </ul>
+        <p>このうち傷病名・障害の種類・就労状況など健康に関する情報は、個人情報保護法上の「要配慮個人情報」に該当します。これらの情報は、お客様ご自身がお問い合わせフォームに入力・送信されることをもって、取得へのご同意をいただいたものとして取り扱います。</p>
       </div>
 
       <div class="policy-section">
@@ -177,10 +203,14 @@ footer{background:#1e3528;color:rgba(255,255,255,.45);padding:2.5rem 5%;display:
 
 <footer>
   <div class="footer-logo">太田社会保険労務士事務所<br><span style="font-size:.75rem;font-family:'Noto Sans JP',sans-serif;font-weight:300">広島市中区 ／ 障害年金専門</span></div>
-  <div class="footer-info">広島市中区・吉島バス通りよりすぐ<br>お問い合わせはフォームよりお願いします</div>
-  <div class="footer-links"><a href="privacy.html">個人情報保護方針</a></div>
+  <div class="footer-info">広島市中区・吉島バス通りよりすぐ<br>お問い合わせはフォームよりお願いします<br>社会保険労務士登録番号 第34250008号</div>
+  <div class="footer-links" style="font-size:.72rem;width:100%;text-align:center;margin-bottom:.3rem"><a href="nenrei.html" style="color:rgba(255,255,255,.5);text-decoration:none;margin:0 .8rem">年齢早見表</a><a href="blog/index.html" style="color:rgba(255,255,255,.5);text-decoration:none;margin:0 .8rem">ブログ</a></div>
   <div class="footer-copy">© 2026 太田社会保険労務士事務所　All Rights Reserved.</div>
 </footer>
 
+<script>
+function toggleMobileNav(){const nav=document.getElementById('mobile-nav');const overlay=document.getElementById('mobile-overlay');const btn=document.getElementById('hamburger-btn');const isOpen=nav.classList.contains('open');nav.classList.toggle('open',!isOpen);overlay.classList.toggle('open',!isOpen);btn.textContent=isOpen?'☰':'✕';}
+function closeMobileNav(){document.getElementById('mobile-nav').classList.remove('open');document.getElementById('mobile-overlay').classList.remove('open');document.getElementById('hamburger-btn').textContent='☰';}
+</script>
 </body>
 </html>
